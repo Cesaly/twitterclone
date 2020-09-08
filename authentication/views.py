@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse, HttpResponseRedirect
 from django.contrib.auth import login, logout, authenticate
-from django.contrib.auth.decorators import login_required
+
 
 from authentication.forms import LoginForm, SignUpForm
 # Create your views here.
@@ -36,6 +36,6 @@ def signupview(request):
     return render(request, 'generic_form.html', {'form': form})
 
 
-@login_required
-def index(request):
-    return render(request, 'index.html')
+def logoutview(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("homepage"))

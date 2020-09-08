@@ -10,7 +10,7 @@ class TwitUser(models.Model):
         return self.name
 
 
-class NewTwitUser(models.Model):
+class NewTweetUser(models.Model):
     name = models.CharField(max_length=30, default='')
 
     def __str__(self):
